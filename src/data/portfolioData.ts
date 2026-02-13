@@ -1,7 +1,7 @@
 import type { Skill, Experience, Project, ContactInfo } from '../types';
 
 export const personalInfo = {
-    name: 'Ragavan S',
+    name: 'Ragavan SRK',
     role: 'Frontend Engineer | React & React Native',
     tagline: 'Building scalable, real-time applications with modern web and mobile technologies',
     yearsOfExperience: '3+',
