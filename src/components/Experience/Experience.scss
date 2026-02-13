@@ -1,0 +1,120 @@
+.experience-section {
+    background: var(--bg-secondary);
+}
+
+.experience-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) 0;
+}
+
+.timeline-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.95rem;
+}
+
+.experience-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+    margin-bottom: var(--spacing-md);
+
+    &:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateX(8px);
+        border-color: var(--primary-color);
+    }
+}
+
+.experience-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.experience-company {
+    font-size: 1.05rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+}
+
+.experience-description {
+    margin: var(--spacing-md) 0;
+    padding-left: var(--spacing-md);
+
+    li {
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-sm);
+        line-height: 1.7;
+
+        &::marker {
+            color: var(--primary-color);
+        }
+    }
+}
+
+.experience-tech {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+
+    strong {
+        color: var(--text-primary);
+        display: block;
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.tech-tag {
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
+}
+
+[data-theme='dark'] .experience-card {
+    background: var(--bg-secondary);
+}
+
+@media (max-width: 768px) {
+    .experience-timeline {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .timeline-label {
+        font-size: 0.85rem;
+    }
+
+    .experience-title {
+        font-size: 1.2rem;
+    }
+
+    .experience-company {
+        font-size: 1rem;
+    }
+
+    .experience-description {
+        padding-left: var(--spacing-sm);
+
+        li {
+            font-size: 0.95rem;
+        }
+    }
+
+    .experience-card:hover {
+        transform: translateX(4px);
+    }
+}

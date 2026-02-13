@@ -1,0 +1,106 @@
+.contact-section {
+    background: var(--bg-primary);
+}
+
+.contact-info-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-xl);
+}
+
+.contact-info-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.contact-info-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+
+    &:hover {
+        background: var(--bg-primary);
+        border-color: var(--primary-color);
+        transform: translateX(8px);
+        box-shadow: var(--shadow-sm);
+    }
+}
+
+.contact-link-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.contact-link-content {
+    flex: 1;
+}
+
+.contact-link-label {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.contact-link-value {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .contact-info-card {
+        padding: var(--spacing-md);
+    }
+
+    .contact-info-title {
+        font-size: 1.3rem;
+    }
+
+    .contact-link {
+        padding: var(--spacing-sm);
+
+        &:hover {
+            transform: translateX(4px);
+        }
+    }
+
+    .contact-link-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+}

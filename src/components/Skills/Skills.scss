@@ -1,0 +1,141 @@
+.skills-section {
+    background: var(--bg-primary);
+    // remove overflow hidden to allow scroll on page if needed, or keep if section is distinct
+}
+
+.skills-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.tab-button {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 8px 16px; // Slightly reduced padding
+    border-radius: 50px;
+    font-size: 0.85rem; // Slightly reduced font
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+        transform: translateY(-2px);
+    }
+
+    &.active {
+        background: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+        box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+    }
+}
+
+.skills-grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 1.5rem; // Row gap 2rem, Column gap 1.5rem
+    padding: var(--spacing-lg) 0;
+    width: 100%;
+    max-width: 1000px; // Limit width for better reading
+    margin: 0 auto;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: transform var(--transition-normal);
+    width: 80px; // Reduced width
+
+    &:hover {
+        transform: scale(1.1);
+
+        .skill-circle {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.4);
+        }
+
+        .skill-name {
+            color: var(--primary-color);
+        }
+    }
+}
+
+.skill-circle {
+    width: 50px; // Reduced from 60px
+    height: 50px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color); // thinner border
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+
+    &.fallback {
+        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.skill-image {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease;
+}
+
+.skill-name {
+    font-size: 0.75rem; // Reduced from 0.85rem
+    font-weight: 500;
+    color: var(--text-primary);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .skills-tabs {
+        gap: 8px;
+    }
+
+    .tab-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .skill-circle {
+        width: 42px; // Even smaller on mobile
+        height: 42px;
+    }
+
+    .skill-name {
+        font-size: 0.7rem;
+    }
+
+    .skills-grid-container {
+        gap: 1.5rem 1rem;
+    }
+}
