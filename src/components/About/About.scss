@@ -4,54 +4,53 @@
 
 .section-header {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-xs);
 }
 
 .section-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--primary-color);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
     display: block;
 }
 
 .section-title {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 6px;
 }
 
 .section-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
 }
 
 .about-card {
-    background: var(--bg-primary);
+    background: transparent;
     border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-md);
+    box-shadow: none;
     transition: all var(--transition-normal);
 
     &:hover {
-        box-shadow: var(--shadow-lg);
-        transform: translateY(-4px);
+        box-shadow: none;
     }
 }
 
 .about-content {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
 }
 
 .about-text {
-    font-size: 1.05rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.7;
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
     text-align: justify;
 }
 
 .about-highlights {
-    margin-bottom: var(--spacing-xl);
-    padding: var(--spacing-lg) 0;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
@@ -79,7 +78,7 @@
 }
 
 .about-focus {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-sm);
 }
 
 .focus-title {
@@ -91,10 +90,10 @@
 .focus-item {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-xs) 0;
+    gap: 10px;
+    padding: 4px 0;
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .focus-dot {

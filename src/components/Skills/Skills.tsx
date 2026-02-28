@@ -30,6 +30,7 @@ const Skills = () => {
         'Firebase': 'firebase',
         'Git & GitHub': 'git',
         'Webpack/Vite': 'webpack',
+        'Background Sync': 'sync',
         'Docker': 'docker',
         'Linux': 'linux',
         'Python': 'python',
@@ -45,11 +46,15 @@ const Skills = () => {
         'Vue.js': 'vuejs',
         'Angular': 'angular',
         'Next.js': 'nextjs',
+        'RESTful APIs': 'restapi',
+        'Push Notifications': 'push',
+        'CI/CD': 'cicd',
+        'Responsive Design': 'responsive',
     };
 
     const getIconUrl = (skillName: string) => {
         const slug = iconMap[skillName] || skillName.toLowerCase().replace(/[^a-z0-9]/g, '');
-        return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}/${slug}-original.svg`;
+        return `/icons/${slug}.svg`;
     };
 
     const getFilteredSkills = () => {

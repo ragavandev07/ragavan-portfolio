@@ -5,12 +5,46 @@ import {
     LinkedinOutlined,
 } from '@ant-design/icons';
 import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import { contactInfo } from '../../data/portfolioData';
 import './Contact.scss';
 
 const Contact = () => {
+    const sectionRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const section = sectionRef.current;
+        if (!section) return;
+
+        let lastScrollY = window.scrollY;
+
+        const handleScroll = () => {
+            const rect = section.getBoundingClientRect();
+            const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+            if (isInView) {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > lastScrollY) {
+                    // Scrolling down - zoom in
+                    section.classList.add('zoom-in');
+                    section.classList.remove('zoom-out');
+                } else {
+                    // Scrolling up - zoom out
+                    section.classList.add('zoom-out');
+                    section.classList.remove('zoom-in');
+                }
+
+                lastScrollY = currentScrollY;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <section id="contact" className="section contact-section">
+        <section id="contact" className="section contact-section" ref={sectionRef}>
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

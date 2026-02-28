@@ -18,6 +18,7 @@ export interface Project {
   features: string[];
   technologies: string[];
   highlights?: string[];
+  rolesAndResponsibilities?: string[];
   image?: string;
 }
 

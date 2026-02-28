@@ -1,5 +1,4 @@
 import { Button, Row, Col } from 'antd';
-import { DownloadOutlined, RocketOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import { personalInfo } from '../../data/portfolioData';
 import './Hero.scss';
@@ -12,18 +11,10 @@ const Hero = () => {
         }
     };
 
-    const handleDownloadResume = () => {
-        // Replace with actual resume URL
-        window.open('/resume.pdf', '_blank');
-    };
+
 
     return (
         <section id="hero" className="hero-section">
-            <div className="hero-background">
-                <div className="gradient-orb orb-1"></div>
-                <div className="gradient-orb orb-2"></div>
-                <div className="gradient-orb orb-3"></div>
-            </div>
 
             <div className="container">
                 <Row justify="center" align="middle" className="hero-content">
@@ -35,12 +26,16 @@ const Hero = () => {
                             className="hero-text-container"
                         >
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2, duration: 0.5 }}
-                                className="hero-badge"
+                                className="hero-badge-modern"
                             >
-                                <RocketOutlined /> {personalInfo.yearsOfExperience} Years of Experience
+                                <div className="badge-ring">
+                                    <span className="badge-num">{personalInfo.yearsOfExperience}</span>
+                                </div>
+                                <span className="badge-label">Years of Experience</span>
+                                <div className="badge-halo"></div>
                             </motion.div>
 
                             <motion.h1
@@ -79,19 +74,19 @@ const Hero = () => {
                                 <Button
                                     type="primary"
                                     size="large"
-                                    icon={<RocketOutlined />}
                                     onClick={scrollToProjects}
                                     className="cta-button primary"
                                 >
-                                    View Projects
+                                    Projects
                                 </Button>
                                 <Button
                                     size="large"
-                                    icon={<DownloadOutlined />}
-                                    onClick={handleDownloadResume}
+                                    href="/Ragavan_MERN & React Native.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="cta-button secondary"
                                 >
-                                    Download Resume
+                                    Resume
                                 </Button>
                             </motion.div>
                         </motion.div>

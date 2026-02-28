@@ -38,14 +38,14 @@ const About = () => {
                                             </Col>
                                             <Col xs={24} sm={12} md={8}>
                                                 <div className="highlight-item">
-                                                    <div className="highlight-number">10K+</div>
-                                                    <div className="highlight-label">Active Users</div>
+                                                    <div className="highlight-number">10+</div>
+                                                    <div className="highlight-label">Web Applications</div>
                                                 </div>
                                             </Col>
                                             <Col xs={24} sm={12} md={8}>
                                                 <div className="highlight-item">
-                                                    <div className="highlight-number">15+</div>
-                                                    <div className="highlight-label">Projects Delivered</div>
+                                                    <div className="highlight-number">4+</div>
+                                                    <div className="highlight-label">Mobile Applications</div>
                                                 </div>
                                             </Col>
                                         </Row>
@@ -54,28 +54,40 @@ const About = () => {
                                     <div className="about-focus">
                                         <h3 className="focus-title">Core Focus Areas</h3>
                                         <Row gutter={[16, 16]}>
-                                            <Col xs={24} sm={12}>
+                                            <Col xs={24} sm={12} md={8}>
                                                 <div className="focus-item">
                                                     <div className="focus-dot"></div>
-                                                    <span>Scalable UI Architecture</span>
+                                                    <span>Admin Dashboard Development</span>
                                                 </div>
                                             </Col>
-                                            <Col xs={24} sm={12}>
+                                            <Col xs={24} sm={12} md={8}>
                                                 <div className="focus-item">
                                                     <div className="focus-dot"></div>
-                                                    <span>Real-time Systems</span>
+                                                    <span>Real-time Chat Systems</span>
                                                 </div>
                                             </Col>
-                                            <Col xs={24} sm={12}>
+                                            <Col xs={24} sm={12} md={8}>
                                                 <div className="focus-item">
                                                     <div className="focus-dot"></div>
                                                     <span>Performance Optimization</span>
                                                 </div>
                                             </Col>
-                                            <Col xs={24} sm={12}>
+                                            <Col xs={24} sm={12} md={8}>
                                                 <div className="focus-item">
                                                     <div className="focus-dot"></div>
                                                     <span>Offline-First Architecture</span>
+                                                </div>
+                                            </Col>
+                                            <Col xs={24} sm={12} md={8}>
+                                                <div className="focus-item">
+                                                    <div className="focus-dot"></div>
+                                                    <span>Responsive UI/UX Design</span>
+                                                </div>
+                                            </Col>
+                                            <Col xs={24} sm={12} md={8}>
+                                                <div className="focus-item">
+                                                    <div className="focus-dot"></div>
+                                                    <span>API Integration & Backend Services</span>
                                                 </div>
                                             </Col>
                                         </Row>

@@ -1,120 +1,189 @@
 .experience-section {
-    background: var(--bg-secondary);
+    background: var(--bg-primary);
 }
 
-.experience-timeline {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: var(--spacing-lg) 0;
+/* ── Experience list ── */
+.exp-list {
+    margin-top: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
-.timeline-label {
-    font-weight: 500;
-    color: var(--text-secondary);
+/* ── Each experience card ── */
+.exp-card {
+    display: flex;
+    gap: 32px;
+    align-items: stretch;
+}
+
+/* ── Left side: icon + vertical line ── */
+.exp-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 48px;
+}
+
+.exp-icon-circle {
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
-    gap: var(--spacing-xs);
-    font-size: 0.95rem;
-}
-
-.experience-card {
-    background: var(--bg-primary);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border-color);
-    transition: all var(--transition-normal);
-    margin-bottom: var(--spacing-md);
-
-    &:hover {
-        box-shadow: var(--shadow-md);
-        transform: translateX(8px);
-        border-color: var(--primary-color);
-    }
-}
-
-.experience-title {
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-xs);
-}
-
-.experience-company {
-    font-size: 1.05rem;
+    justify-content: center;
+    border: 2px solid rgba(129, 140, 248, 0.3);
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: rgba(129, 140, 248, 0.06);
     color: var(--primary-color);
-    font-weight: 500;
-    margin-bottom: var(--spacing-md);
+    font-size: 1.15rem;
 }
 
-.experience-description {
-    margin: var(--spacing-md) 0;
-    padding-left: var(--spacing-md);
+.exp-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(180deg, rgba(129, 140, 248, 0.3), rgba(129, 140, 248, 0.05));
+}
+
+.exp-card:last-child .exp-line {
+    display: none;
+}
+
+/* ── Right side: content ── */
+.exp-content {
+    flex: 1;
+    padding-bottom: 48px;
+    min-width: 0;
+}
+
+.exp-card:last-child .exp-content {
+    padding-bottom: 0;
+}
+
+.exp-meta {
+    margin-bottom: 8px;
+}
+
+.exp-duration {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.exp-title {
+    font-family: var(--font-secondary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.exp-company {
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.exp-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
     li {
         color: var(--text-secondary);
-        margin-bottom: var(--spacing-sm);
         line-height: 1.7;
+        margin-bottom: 8px;
+        padding-left: 18px;
+        position: relative;
+        font-size: 0.9rem;
 
-        &::marker {
-            color: var(--primary-color);
+        &::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: #475569;
+            font-weight: 700;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
         }
     }
 }
 
-.experience-tech {
-    margin-top: var(--spacing-md);
-    padding-top: var(--spacing-md);
-    border-top: 1px solid var(--border-color);
-
-    strong {
-        color: var(--text-primary);
-        display: block;
-        margin-bottom: var(--spacing-sm);
-    }
-}
-
-.tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-xs);
-}
-
-.tech-tag {
-    font-size: 0.85rem;
-    padding: 4px 12px;
-    border-radius: var(--radius-sm);
-}
-
-[data-theme='dark'] .experience-card {
-    background: var(--bg-secondary);
-}
-
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-    .experience-timeline {
-        padding: var(--spacing-sm) 0;
+    .exp-card {
+        gap: 16px;
     }
 
-    .timeline-label {
+    .exp-left {
+        width: 36px;
+    }
+
+    .exp-icon-circle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+        border-width: 1.5px;
+    }
+
+    .exp-content {
+        padding-bottom: 32px;
+    }
+
+    .exp-title {
+        font-size: 1.15rem;
+    }
+
+    .exp-company {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+
+    .exp-duration {
+        font-size: 0.72rem;
+        letter-spacing: 1px;
+    }
+
+    .exp-points li {
+        font-size: 0.83rem;
+        margin-bottom: 6px;
+        padding-left: 14px;
+        line-height: 1.65;
+    }
+}
+
+@media (max-width: 480px) {
+    .exp-card {
+        gap: 12px;
+    }
+
+    .exp-left {
+        width: 32px;
+    }
+
+    .exp-icon-circle {
+        width: 32px;
+        height: 32px;
         font-size: 0.85rem;
     }
 
-    .experience-title {
-        font-size: 1.2rem;
+    .exp-content {
+        padding-bottom: 24px;
     }
 
-    .experience-company {
-        font-size: 1rem;
+    .exp-title {
+        font-size: 1.05rem;
     }
 
-    .experience-description {
-        padding-left: var(--spacing-sm);
-
-        li {
-            font-size: 0.95rem;
-        }
-    }
-
-    .experience-card:hover {
-        transform: translateX(4px);
+    .exp-points li {
+        font-size: 0.8rem;
+        padding-left: 12px;
     }
 }

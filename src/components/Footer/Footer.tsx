@@ -1,65 +1,77 @@
-import { Layout, Row, Col } from 'antd';
-import { GithubOutlined, LinkedinOutlined, MailOutlined } from '@ant-design/icons';
+import { GithubOutlined, LinkedinOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
 import { contactInfo } from '../../data/portfolioData';
 import './Footer.scss';
-
-const { Footer: AntFooter } = Layout;
 
 const Footer = () => {
 
     return (
-        <AntFooter className="footer">
+        <footer className="footer" id="contact">
             <div className="container">
-                <Row gutter={[32, 32]} justify="space-between" align="middle">
-                    <Col xs={24} md={12}>
-                        <div className="footer-brand">
-                            <h3 className="footer-title">Let's Build Something Great</h3>
-                            <p className="footer-text">
-                                Passionate about building exceptional digital experiences
-                            </p>
+                {/* Top Section */}
+                <div className="footer-top">
+                    <div className="footer-cta">
+                        <h3 className="footer-heading">Let's Build Something Great</h3>
+                        <p className="footer-subtext">
+                            Passionate about building exceptional digital experiences.
+                            Feel free to reach out!
+                        </p>
+                    </div>
+
+                    <div className="footer-links-grid">
+                        {/* Contact Info */}
+                        <div className="footer-column">
+                            <h4 className="footer-column-title">Get In Touch</h4>
+                            <div className="footer-contact-list">
+                                <a href={`mailto:${contactInfo.email}`} className="footer-contact-link">
+                                    <MailOutlined />
+                                    <span>{contactInfo.email}</span>
+                                </a>
+                                {contactInfo.phone && (
+                                    <a href={`tel:${contactInfo.phone}`} className="footer-contact-link">
+                                        <PhoneOutlined />
+                                        <span>{contactInfo.phone}</span>
+                                    </a>
+                                )}
+                            </div>
                         </div>
-                    </Col>
 
-                    <Col xs={24} md={12}>
-                        <div className="footer-social">
-                            <a
-                                href={contactInfo.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="social-link"
-                                aria-label="GitHub"
-                            >
-                                <GithubOutlined />
-                            </a>
-                            <a
-                                href={contactInfo.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="social-link"
-                                aria-label="LinkedIn"
-                            >
-                                <LinkedinOutlined />
-                            </a>
-                            <a
-                                href={`mailto:${contactInfo.email}`}
-                                className="social-link"
-                                aria-label="Email"
-                            >
-                                <MailOutlined />
-                            </a>
+                        {/* Social Links */}
+                        <div className="footer-column">
+                            <h4 className="footer-column-title">Follow Me</h4>
+                            <div className="footer-social-icons">
+                                <a
+                                    href={contactInfo.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="social-icon-btn"
+                                    aria-label="GitHub"
+                                >
+                                    <GithubOutlined />
+                                </a>
+                                <a
+                                    href={contactInfo.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="social-icon-btn"
+                                    aria-label="LinkedIn"
+                                >
+                                    <LinkedinOutlined />
+                                </a>
+                                <a
+                                    href={`mailto:${contactInfo.email}`}
+                                    className="social-icon-btn"
+                                    aria-label="Email"
+                                >
+                                    <MailOutlined />
+                                </a>
+                            </div>
                         </div>
-                    </Col>
-                </Row>
-
-                <div className="footer-divider"></div>
-
-                <div className="footer-bottom">
-                    <p className="footer-copyright">
-                        Thank you for visiting my portfolio!
-                    </p>
+                    </div>
                 </div>
+
+
             </div>
-        </AntFooter>
+        </footer>
     );
 };
 
