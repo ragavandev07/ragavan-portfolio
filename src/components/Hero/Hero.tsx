@@ -81,7 +81,7 @@ const Hero = () => {
                                 </Button>
                                 <Button
                                     size="large"
-                                    href="http://portfolio-ragavan.s3-website.eu-north-1.amazonaws.com/Ragavan_MERN%20&%20React%20Native.pdf"
+                                    href="https://portfolio-ragavan.s3.eu-north-1.amazonaws.com/Ragavan.Resume.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="cta-button secondary"

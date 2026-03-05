@@ -119,6 +119,18 @@
     max-width: 900px;
 }
 
+/* Highlighted number token inside description (e.g. "4+") */
+.desc-highlight {
+    font-weight: 800;
+    font-size: 1rem;
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.5px;
+    padding: 0 1px;
+}
+
 /* ── Sections ── */
 .project-section {
     margin-bottom: 12px;
@@ -186,6 +198,43 @@
     flex-shrink: 0;
     font-size: 0.85rem;
     transition: all 0.25s ease;
+}
+
+/* ── Live website link ── */
+.project-link-row {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+.project-live-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #10b981;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.25s ease;
+
+    .live-link-arrow {
+        font-size: 0.78rem;
+        transition: transform 0.25s ease;
+        opacity: 0.8;
+    }
+
+    &:hover {
+        color: #34d399;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+
+        .live-link-arrow {
+            transform: translateX(4px);
+            opacity: 1;
+        }
+    }
 }
 
 /* ── Toggle arrow button row ── */

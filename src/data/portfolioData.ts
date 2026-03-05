@@ -234,6 +234,52 @@ export const projects: Project[] = [
             'Ensured pixel-perfect responsive design across all devices using modern CSS techniques',
         ],
     },
+    {
+        id: 'responsive-websites',
+        title: 'Responsive Websites (React & TypeScript)',
+        description:
+            'Designed and developed 4+ fully responsive, production-quality websites built entirely with React and TypeScript — no backend involved. Each site focuses on clean component architecture, pixel-perfect responsiveness across all screen sizes, and a polished, modern user experience.',
+        features: [
+            'Fully responsive layouts for mobile, tablet, and desktop',
+            'Type-safe codebase with TypeScript throughout',
+            'Reusable, composable component library',
+            'Smooth animations and micro-interactions',
+            'Accessible UI following WCAG guidelines',
+            'Performance-optimized with lazy loading and code splitting',
+            'SEO-friendly semantic HTML structure',
+            'Dark mode support and theme customization',
+            'Cross-browser compatibility',
+            'Integrated with third-party APIs and static data sources',
+        ],
+        technologies: [
+            'React',
+            'TypeScript',
+            'HTML5',
+            'CSS3',
+            'SCSS',
+            'Framer Motion',
+            'Vite',
+            'React Router',
+        ],
+        highlights: [
+            'Frontend Only',
+            'Fully Responsive',
+            'TypeScript Type-Safe',
+            'Modern UI/UX',
+            'Performance Optimized',
+        ],
+        rolesAndResponsibilities: [
+            'Designed and built fully responsive multi-page websites from scratch using React and TypeScript',
+            'Architected scalable component structures with strong TypeScript typing for maintainability and reliability',
+            'Implemented responsive layouts using CSS Grid, Flexbox, and SCSS with mobile-first design principles',
+            'Created smooth page transitions and micro-animations using Framer Motion to elevate the user experience',
+            'Optimized performance via lazy loading, code splitting, and asset optimization, achieving high Lighthouse scores',
+            'Ensured cross-browser compatibility and accessibility compliance (WCAG) across all websites',
+            'Integrated third-party APIs and static data sources to power dynamic content without a dedicated backend',
+            'Implemented dark mode and theme customization using React context and CSS custom properties',
+        ],
+        link: 'https://www.advantedgets.com/',
+    },
 ];
 
 export const contactInfo: ContactInfo = {

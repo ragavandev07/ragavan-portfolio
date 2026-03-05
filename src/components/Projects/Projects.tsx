@@ -1,9 +1,19 @@
 import { useState } from 'react';
 import { Card, Tag } from 'antd';
-import { RocketOutlined, CheckCircleOutlined, UserSwitchOutlined, DownOutlined } from '@ant-design/icons';
+import { RocketOutlined, CheckCircleOutlined, UserSwitchOutlined, DownOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { projects } from '../../data/portfolioData';
 import './Projects.scss';
+
+// Highlight specific tokens (e.g. "4+") inside a description string
+const renderDescription = (text: string) => {
+    const parts = text.split(/(\d+\+)/g);
+    return parts.map((part, i) =>
+        /^\d+\+$/.test(part)
+            ? <span key={i} className="desc-highlight">{part}</span>
+            : part
+    );
+};
 
 const Projects = () => {
     // First project expanded by default
@@ -52,7 +62,7 @@ const Projects = () => {
                                         </div>
 
                                         {/* ── Description ── */}
-                                        <p className="project-description">{project.description}</p>
+                                        <p className="project-description">{renderDescription(project.description)}</p>
 
                                         {/* ── Technologies Used ── */}
                                         {project.technologies && project.technologies.length > 0 && (
@@ -109,6 +119,20 @@ const Projects = () => {
                                                 </motion.div>
                                             )}
                                         </AnimatePresence>
+
+                                        {/* ── Live Link (shown only when expanded) ── */}
+                                        {isExpanded && project.link && (
+                                            <div className="project-link-row">
+                                                <a
+                                                    href={project.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="project-live-link"
+                                                >
+                                                    🌐 {project.link.replace(/https?:\/\//, '').replace(/\/$/, '')} <ArrowRightOutlined className="live-link-arrow" />
+                                                </a>
+                                            </div>
+                                        )}
 
                                         {/* ── Toggle Arrow Button ── */}
                                         {project.rolesAndResponsibilities && project.rolesAndResponsibilities.length > 0 && (

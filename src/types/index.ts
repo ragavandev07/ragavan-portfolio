@@ -20,6 +20,7 @@ export interface Project {
   highlights?: string[];
   rolesAndResponsibilities?: string[];
   image?: string;
+  link?: string;
 }
 
 export interface ContactInfo {
