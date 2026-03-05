@@ -118,16 +118,11 @@
 
 @media (max-width: 768px) {
     .skills-tabs {
-        gap: 8px;
-    }
-
-    .tab-button {
-        padding: 6px 12px;
-        font-size: 0.8rem;
+        display: none;
     }
 
     .skill-circle {
-        width: 42px; // Even smaller on mobile
+        width: 42px;
         height: 42px;
     }
 
