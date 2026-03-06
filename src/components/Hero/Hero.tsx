@@ -76,18 +76,6 @@ const Hero = () => {
                             {personalInfo.tagline}
                         </motion.p>
 
-                        {/* Skills — mobile only */}
-                        <motion.div
-                            className="hero-chips-mobile"
-                            initial={{ opacity: 0, y: 16 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.55, duration: 0.5 }}
-                        >
-                            {['React', 'React Native', 'TypeScript', 'Node.js', 'MongoDB'].map((s) => (
-                                <span key={s} className="hero-chip">{s}</span>
-                            ))}
-                        </motion.div>
-
                         {/* CTA buttons — desktop only */}
                         <motion.div
                             className="hero-cta"

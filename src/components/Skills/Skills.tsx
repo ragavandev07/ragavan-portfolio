@@ -1,14 +1,9 @@
-import { useState } from 'react';
-import { Tooltip } from 'antd';
 import { ThunderboltOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import { skills } from '../../data/portfolioData';
 import './Skills.scss';
 
 const Skills = () => {
-    const [activeTab, setActiveTab] = useState('All');
-
-    const categories = ['All', ...skills.map(s => s.category)];
 
     const iconMap: { [key: string]: string } = {
         'React.js': 'react',
@@ -57,17 +52,7 @@ const Skills = () => {
         return `/icons/${slug}.svg`;
     };
 
-    const getFilteredSkills = () => {
-        if (activeTab === 'All') {
-            const allSkills = new Set<string>();
-            skills.forEach(cat => cat.items.forEach(item => allSkills.add(item)));
-            return Array.from(allSkills);
-        }
-        const category = skills.find(s => s.category === activeTab);
-        return category ? category.items : [];
-    };
-
-    const displaySkills = getFilteredSkills();
+    const allSkills = Array.from(new Set(skills.flatMap(cat => cat.items)));
     return (
         <section id="skills" className="section skills-section">
             <div className="container">
@@ -85,20 +70,8 @@ const Skills = () => {
                         </p>
                     </div>
 
-                    <div className="skills-tabs">
-                        {categories.map((tab) => (
-                            <button
-                                key={tab}
-                                className={`tab-button ${activeTab === tab ? 'active' : ''}`}
-                                onClick={() => setActiveTab(tab)}
-                            >
-                                {tab}
-                            </button>
-                        ))}
-                    </div>
-
                     <div className="skills-grid-container">
-                        {displaySkills.map((skill, index) => (
+                        {allSkills.map((skill, index) => (
                             <motion.div
                                 key={`${skill}-${index}`}
                                 className="skill-item"
@@ -106,27 +79,24 @@ const Skills = () => {
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.3, delay: index * 0.05 }}
                             >
-                                <Tooltip title={skill} placement="bottom">
-                                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-                                        <div className="skill-circle">
-                                            <img
-                                                src={getIconUrl(skill)}
-                                                alt={skill}
-                                                className="skill-image"
-                                                onError={(e) => {
-                                                    const target = e.target as HTMLImageElement;
-                                                    target.style.display = 'none';
-                                                    const parent = target.parentElement;
-                                                    if (parent) {
-                                                        parent.classList.add('fallback');
-                                                        parent.innerText = skill.charAt(0);
-                                                    }
-                                                }}
-                                            />
-                                        </div>
-                                        <span className="skill-name">{skill}</span>
-                                    </div>
-                                </Tooltip>
+                                <div className="skill-circle">
+                                    <img
+                                        src={getIconUrl(skill)}
+                                        alt={skill}
+                                        className="skill-image"
+                                        onError={(e) => {
+                                            const target = e.target as HTMLImageElement;
+                                            target.style.display = 'none';
+                                            const parent = target.parentElement;
+                                            if (parent) {
+                                                parent.classList.add('fallback');
+                                                parent.innerText = skill.charAt(0);
+                                            }
+                                        }}
+                                    />
+                                </div>
+                                <span className="skill-name">{skill}</span>
+                                <span className="skill-tooltip">{skill}</span>
                             </motion.div>
                         ))}
                     </div>

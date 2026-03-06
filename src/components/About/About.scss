@@ -110,12 +110,20 @@
     }
 
     .about-text {
-        font-size: 1rem;
+        font-size: 0.9rem;
         text-align: left;
     }
 
+    .highlight-item {
+        padding: 6px 4px;
+    }
+
     .highlight-number {
-        font-size: 2rem;
+        font-size: 1.4rem;
+    }
+
+    .highlight-label {
+        font-size: 0.7rem;
     }
 
     .about-content {

@@ -3,40 +3,6 @@
     // remove overflow hidden to allow scroll on page if needed, or keep if section is distinct
 }
 
-.skills-tabs {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-}
-
-.tab-button {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    padding: 8px 16px; // Slightly reduced padding
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    font-family: var(--font-primary);
-    cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
-    position: relative;
-    overflow: hidden;
-
-    &:hover {
-        background: var(--bg-tertiary);
-        color: var(--text-primary);
-    }
-
-    &.active {
-        background: var(--primary-color);
-        color: white;
-        border-color: var(--primary-color);
-        box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
-    }
-}
 
 .skills-grid-container {
     display: flex;
@@ -56,10 +22,10 @@
     gap: 0.5rem;
     cursor: pointer;
     transition: none;
-    width: 80px; // Reduced width
+    width: 80px;
+    position: relative;
 
     &:hover {
-
         .skill-circle {
             border-color: var(--primary-color);
             box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.4);
@@ -68,6 +34,47 @@
         .skill-name {
             color: var(--primary-color);
         }
+
+        .skill-tooltip {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-4px);
+            pointer-events: none;
+        }
+    }
+}
+
+/* Custom tooltip */
+.skill-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(100, 255, 218, 0.25);
+    color: #64FFDA;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+    /* Arrow */
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-top-color: rgba(100, 255, 218, 0.25);
     }
 }
 

@@ -61,7 +61,7 @@ export const experiences: Experience[] = [
         company: 'Lamynaals Technologies Private Limited',
         duration: 'Jan 2023 - Feb 2026',
         description: [
-            'Architected and developed a production-ready real-time chat application serving 10,000+ active users on mobile using React Native and Socket.io',
+            'Architected and developed a production-ready real-time chat application serving 1000+ active users on mobile using React Native and Socket.io',
             'Built an enterprise-grade employee management & live tracking system (Web & Mobile) covering attendance, shift scheduling, leave management, and real-time GPS tracking',
             'Developed a comprehensive insurance management platform with policy management, claims processing, role-based access control, and premium UI/UX',
             'Created a fully responsive car booking website with Google Places API integration, real-time distance calculation, and dynamic fare estimation',
@@ -112,7 +112,7 @@ export const projects: Project[] = [
             'Redux',
         ],
         highlights: [
-            '10,000+ active users',
+            '1000+ active users',
             '99.9% message delivery rate',
             'Sub-second message latency',
             'Offline-first architecture',

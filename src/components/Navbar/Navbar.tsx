@@ -39,7 +39,7 @@ const Navbar = () => {
                                 <polygon
                                     points="20,1 38,11 38,31 20,41 2,31 2,11"
                                     fill="none"
-                                    stroke="#818cf8"
+                                    stroke="#64FFDA"
                                     strokeWidth="2"
                                 />
                             </svg>

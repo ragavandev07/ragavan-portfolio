@@ -31,8 +31,6 @@ const IntroAnimation = ({ onComplete }: { onComplete: () => void }) => {
                 >
                     <motion.div
                         className="intro-content"
-                        animate={{ x: phase === 'reveal' ? -50 : 0 }}
-                        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                     >
                         <div className="intro-left-side">
                             <svg className="intro-hexagon-svg" viewBox="-5 -5 150 155" width="110" height="113">

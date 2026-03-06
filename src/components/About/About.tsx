@@ -29,20 +29,20 @@ const About = () => {
                                     <p className="about-text">{personalInfo.bio}</p>
 
                                     <div className="about-highlights">
-                                        <Row gutter={[24, 24]}>
-                                            <Col xs={24} sm={12} md={8}>
+                                        <Row gutter={[16, 16]} justify="center">
+                                            <Col xs={8} md={8}>
                                                 <div className="highlight-item">
                                                     <div className="highlight-number">{personalInfo.yearsOfExperience}</div>
                                                     <div className="highlight-label">Years Experience</div>
                                                 </div>
                                             </Col>
-                                            <Col xs={24} sm={12} md={8}>
+                                            <Col xs={8} md={8}>
                                                 <div className="highlight-item">
                                                     <div className="highlight-number">10+</div>
                                                     <div className="highlight-label">Web Applications</div>
                                                 </div>
                                             </Col>
-                                            <Col xs={24} sm={12} md={8}>
+                                            <Col xs={8} md={8}>
                                                 <div className="highlight-item">
                                                     <div className="highlight-number">4+</div>
                                                     <div className="highlight-label">Mobile Applications</div>

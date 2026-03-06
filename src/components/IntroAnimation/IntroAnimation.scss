@@ -36,7 +36,7 @@
 }
 
 .hexagon-border {
-    stroke: #818cf8;
+    stroke: #64FFDA;
     stroke-dasharray: 600;
     stroke-dashoffset: 600;
     stroke-linecap: round;
@@ -58,7 +58,7 @@
     font-family: 'Outfit', sans-serif;
     font-size: 3.8rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #64FFDA;
     position: relative;
     z-index: 2;
     line-height: 1;
@@ -87,7 +87,7 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
-    color: #818cf8;
+    color: #64FFDA;
     margin: 6px 0 0 0;
     white-space: nowrap;
     letter-spacing: 2px;
@@ -96,30 +96,30 @@
 
 @media (max-width: 768px) {
     .intro-left-side {
-        width: 80px;
-        height: 82px;
+        width: 70px;
+        height: 72px;
     }
 
     .intro-hexagon-svg {
-        width: 80px;
-        height: 82px;
+        width: 70px;
+        height: 72px;
     }
 
     .intro-letter {
-        font-size: 2.6rem;
+        font-size: 2rem;
     }
 
     .intro-right-side {
         padding-left: 10px;
-        height: 80px;
+        height: 70px;
     }
 
     .intro-name {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .intro-role {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         letter-spacing: 1px;
     }
 }
