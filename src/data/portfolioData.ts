@@ -5,7 +5,7 @@ export const personalInfo = {
     role: 'Software Engineer',
     tagline: 'Specializing in high-performance full-stack development with React, React Native, and Node.js.',
     yearsOfExperience: '3+',
-    bio: 'Passionate Full stack Developer with 3+ years of experience specializing in React, React Native, and Node.js. Expert in building production-grade real-time systems, enterprise-scale management platforms, and high-performance mobile applications. Strong focus on scalable architectures, offline-first engineering, and delivering exceptional cross-platform user experiences.',
+    bio: 'Full Stack Web and Mobile Developer with 3+ years of experience specializing in React.js, React Native, Node.js, and modern frontend architecture. Experienced in building scalable admin dashboards, real-time chat applications using WebSocket (Socket.io), and mobile applications with live location tracking. Strong in developing responsive user interfaces, efficient state management, and REST API development and integration using Node.js and Express.js. Skilled in building high-performance, scalable applications with clean, maintainable code and seamless frontend–backend communication.',
     linkedin: 'https://www.linkedin.com/in/ragavan-s-262409360/',
 };
 
@@ -18,6 +18,8 @@ export const skills: Skill[] = [
             'TypeScript',
             'JavaScript (ES6+)',
             'HTML5 & CSS3',
+            'Sass',
+            'Tailwind CSS',
             'Ant Design',
             'Material UI',
             'Responsive Design',
@@ -110,6 +112,7 @@ export const projects: Project[] = [
             'Node.js',
             'AWS S3',
             'Redux',
+            'Sass',
         ],
         highlights: [
             '1000+ active users',
@@ -141,7 +144,7 @@ export const projects: Project[] = [
             'Bulk policy upload and export (Excel)',
             'Advanced search and filtering across policies',
         ],
-        technologies: ['React', 'JavaScript', 'Node.js', 'Material UI', 'Redux', 'MongoDB', 'Express.js'],
+        technologies: ['React', 'JavaScript', 'Node.js', 'Material UI', 'Redux', 'MongoDB', 'Express.js', 'Tailwind CSS'],
         highlights: ['Role-Based Access Control', 'Optimized Performance', 'Premium UI/UX Design'],
         rolesAndResponsibilities: [
             'Designed and developed the complete frontend using React with Material UI for a polished, responsive interface',
@@ -185,6 +188,7 @@ export const projects: Project[] = [
             'Redux',
             'Ant Design',
             'Maps API',
+            'Tailwind CSS',
         ],
         highlights: [
             'Full-Stack Ownership',
@@ -208,6 +212,47 @@ export const projects: Project[] = [
         ],
     },
     {
+        id: 'trust-organization',
+        title: 'Trust Organization Management Platform',
+        description:
+            'A full-stack web application for managing a trust organization — enabling online donations, donor profile management, and receiver case tracking. Supports multiple donation categories including child welfare, marriage assistance, and hospital/medical aid.',
+        features: [
+            'Online donation portal with secure payment flow',
+            'Donor registration and profile management',
+            'Receiver case creation and status tracking',
+            'Multiple donation categories: Child Welfare, Marriage Aid, Medical/Hospital, Education',
+            'Admin dashboard for managing donors, receivers, and donation records',
+            'Donation history and receipt generation',
+            'Category-wise donation filtering and reports',
+            'Role-based access control (Admin / Donor / Staff)',
+            'Responsive UI optimized for all screen sizes',
+        ],
+        technologies: [
+            'React',
+            'Node.js',
+            'Express.js',
+            'MongoDB',
+            'Tailwind CSS',
+            'CSS3',
+            'JavaScript',
+        ],
+        highlights: [
+            'Multi-category donation system',
+            'Donor & receiver management',
+            'Admin dashboard',
+            'Tailwind CSS UI',
+        ],
+        rolesAndResponsibilities: [
+            'Designed and developed the full-stack application from scratch using React and Node.js',
+            'Built the donation portal with category-wise donation flows for child welfare, marriage, hospital, and education',
+            'Implemented donor registration, login, and profile management with role-based access control',
+            'Created a comprehensive admin dashboard to manage donors, receivers, donation records, and category reports',
+            'Developed RESTful APIs with Node.js and Express.js for all donor, receiver, and donation operations',
+            'Styled the entire application with Tailwind CSS for a clean, modern, and fully responsive UI',
+            'Integrated donation history tracking and receipt generation for donors',
+        ],
+    },
+    {
         id: 'car-booking',
         title: 'Car Booking & Ride Management Website',
         description:
@@ -222,7 +267,7 @@ export const projects: Project[] = [
             'Vehicle category selection (Sedan, SUV, Luxury, etc.)',
             'Booking confirmation with trip summary and estimated fare',
         ],
-        technologies: ['React', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'Google Maps API', 'CSS3'],
+        technologies: ['React', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'Google Maps API', 'CSS3', 'Sass'],
         highlights: ['Google Maps Integration', 'Responsive Design', 'Admin Dashboard', 'Dynamic Fare Calculation'],
         rolesAndResponsibilities: [
             'Designed and developed the complete responsive frontend with a modern, user-friendly booking interface',
@@ -236,6 +281,7 @@ export const projects: Project[] = [
     },
     {
         id: 'responsive-websites',
+
         title: 'Responsive Websites (React & TypeScript)',
         description:
             'Designed and developed 4+ fully responsive, production-quality websites built entirely with React and TypeScript — no backend involved. Each site focuses on clean component architecture, pixel-perfect responsiveness across all screen sizes, and a polished, modern user experience.',
@@ -257,6 +303,7 @@ export const projects: Project[] = [
             'HTML5',
             'CSS3',
             'SCSS',
+            'Tailwind CSS',
             'Framer Motion',
             'Vite',
             'React Router',
