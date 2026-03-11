@@ -93,7 +93,7 @@ const Hero = () => {
                             </Button>
                             <Button
                                 size="large"
-                                href="https://portfolio-ragavan.s3.eu-north-1.amazonaws.com/Ragavan.Resume.pdf"
+                                href="https://portfolio-ragavan.s3.eu-north-1.amazonaws.com/RagavanS.Resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="cta-button secondary"
