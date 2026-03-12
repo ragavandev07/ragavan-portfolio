@@ -1,5 +1,6 @@
 import { ConfigProvider, theme } from 'antd';
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import IntroAnimation from './components/IntroAnimation/IntroAnimation';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
@@ -43,6 +44,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      <Analytics />
     </ConfigProvider>
   );
 }
