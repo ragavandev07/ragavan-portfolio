@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { Layout } from 'antd';
 import './Navbar.scss';
@@ -34,17 +36,7 @@ const Navbar = () => {
             <Header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
                 <div className="navbar-container">
                     <div className="navbar-brand" onClick={() => scrollToSection('hero')}>
-                        <div className="brand-hexagon">
-                            <svg viewBox="0 0 40 42" width="40" height="42">
-                                <polygon
-                                    points="20,1 38,11 38,31 20,41 2,31 2,11"
-                                    fill="none"
-                                    stroke="#64FFDA"
-                                    strokeWidth="2"
-                                />
-                            </svg>
-                            <span className="brand-letter">R</span>
-                        </div>
+                        <span className="brand-letter">Ragavan</span>
                     </div>
 
                     <nav className="navbar-menu desktop-menu">

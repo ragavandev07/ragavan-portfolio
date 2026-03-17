@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, Row, Col } from 'antd';
 import {
     MailOutlined,
@@ -68,7 +70,7 @@ const Contact = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2, duration: 0.5 }}
                             >
-                                <Card className="contact-info-card" bordered={false}>
+                                <Card className="contact-info-card" variant="borderless">
                                     <h3 className="contact-info-title">Contact Information</h3>
                                     <p className="contact-info-text">
                                         I'm always open to discussing new opportunities, interesting projects, or

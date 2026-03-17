@@ -19,8 +19,9 @@ export interface Project {
   technologies: string[];
   highlights?: string[];
   rolesAndResponsibilities?: string[];
-  image?: string;
+  iconName?: string;
   link?: string;
+  linkLabel?: string;
 }
 
 export interface ContactInfo {

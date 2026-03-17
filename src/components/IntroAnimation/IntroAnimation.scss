@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #0F172A;
+    background: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,7 +36,7 @@
 }
 
 .hexagon-border {
-    stroke: #64FFDA;
+    stroke: #ffffff;
     stroke-dasharray: 600;
     stroke-dashoffset: 600;
     stroke-linecap: round;
@@ -58,7 +58,7 @@
     font-family: 'Outfit', sans-serif;
     font-size: 3.8rem;
     font-weight: 700;
-    color: #64FFDA;
+    color: #ffffff;
     position: relative;
     z-index: 2;
     line-height: 1;
@@ -87,7 +87,7 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
-    color: #64FFDA;
+    color: #ffffff;
     margin: 6px 0 0 0;
     white-space: nowrap;
     letter-spacing: 2px;

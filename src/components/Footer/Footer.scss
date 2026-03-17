@@ -1,8 +1,9 @@
 .footer {
     position: relative;
-    background: #0a101f;
+    background: #000000;
     padding: 80px 0 60px;
     overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 
@@ -12,7 +13,9 @@
 .footer-top {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 60px;
+    margin-bottom: 60px;
 }
 
 .footer-cta {
@@ -22,7 +25,7 @@
 
 .footer-heading {
     font-family: var(--font-secondary);
-    font-size: 1.75rem;
+    font-size: 1.5rem; // Reduced from 1.75
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 12px;
@@ -30,7 +33,7 @@
 }
 
 .footer-subtext {
-    font-size: 0.95rem;
+    font-size: 0.85rem; // Reduced from 0.95
     color: #94a3b8;
     line-height: 1.7;
     margin: 0;
@@ -48,11 +51,11 @@
 
 .footer-column-title {
     font-family: var(--font-secondary);
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #818cf8;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    font-size: 1rem; // Reduced slightly
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: capitalize;
+    letter-spacing: 1px;
     margin-bottom: 20px;
 }
 
@@ -60,57 +63,39 @@
 .footer-contact-list {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px; // Reduced from 16px
 }
 
 .footer-contact-link {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #cbd5e1;
-    font-size: 0.9rem;
+    color: #888888;
+    font-size: 0.9rem; // Reduced from 1.1rem
     text-decoration: none;
     transition: color 0.25s ease;
 
-    .anticon {
-        font-size: 1rem;
-        color: #64748b;
-        transition: color 0.25s ease;
-    }
-
     &:hover {
         color: #ffffff;
-
-        .anticon {
-            color: #818cf8;
-        }
     }
 }
 
-/* Social Icon Buttons */
-.footer-social-icons {
+/* Social Text Links */
+.footer-social-text-links {
     display: flex;
-    gap: 14px;
+    flex-direction: column;
+    gap: 8px; // Reduced from 14px for smaller gap
 }
 
-.social-icon-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid #1e293b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    color: #cbd5e1;
+.footer-social-text-link {
+    color: #888888;
+    font-size: 0.9rem; // Reduced from 1.1rem
     text-decoration: none;
-    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    transition: all 0.25s ease;
+    display: inline-block;
 
     &:hover {
-        background: #818cf8;
         color: #ffffff;
-        border-color: #818cf8;
+        transform: none; // No translate as requested
     }
 }
 
@@ -148,17 +133,20 @@
 @media (max-width: 960px) {
     .footer-top {
         flex-direction: column;
-        gap: 40px;
+        align-items: center;
+        gap: 48px;
     }
 
     .footer-cta {
         max-width: 100%;
         text-align: center;
+        order: 3; // Ensure CTA is last
     }
 
     .footer-links-grid {
         justify-content: center;
-        gap: 60px;
+        gap: 40px;
+        order: 1;
     }
 }
 
@@ -167,33 +155,49 @@
         padding: 60px 0 40px;
     }
 
+    .footer-top {
+        gap: 40px;
+    }
+
     .footer-heading {
         font-size: 1.5rem;
     }
 
     .footer-links-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 36px;
+        display: flex;
+        flex-direction: row; // Next to next
+        justify-content: space-between; // Spread them out
+        align-items: flex-start;
+        width: 100%;
+        gap: 20px;
+        padding: 0 20px; // Add horizontal padding
     }
 
     .footer-column {
-        text-align: center;
+        text-align: left;
         min-width: auto;
     }
 
     .footer-contact-list {
-        align-items: center;
+        align-items: flex-start;
     }
 
-    .footer-social-icons {
-        justify-content: center;
+    .footer-social-text-links {
+        align-items: flex-start;
+        gap: 10px;
     }
 
     .social-icon-btn {
         width: 44px;
         height: 44px;
         font-size: 1.1rem;
+    }
+
+    .footer-cta {
+        order: 2;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        width: 100%;
     }
 
     .footer-bottom {

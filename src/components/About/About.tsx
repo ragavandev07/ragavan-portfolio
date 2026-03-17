@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, Row, Col } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
@@ -23,13 +25,43 @@ const About = () => {
                     </div>
 
                     <Row gutter={[32, 32]} justify="center">
-                        <Col xs={24} lg={20}>
-                            <Card className="about-card" bordered={false}>
+                        <Col xs={24} lg={24}>
+                            <Card className="about-card" variant="borderless">
+                                {/* Animated Borders */}
+                                <motion.div
+                                    className="about-border-v left"
+                                    initial={{ scaleY: 0 }}
+                                    whileInView={{ scaleY: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
+                                />
+                                <motion.div
+                                    className="about-border-v right"
+                                    initial={{ scaleY: 0 }}
+                                    whileInView={{ scaleY: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
+                                />
+                                <motion.div
+                                    className="about-border-h top"
+                                    initial={{ scaleX: 0 }}
+                                    whileInView={{ scaleX: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+                                />
+                                <motion.div
+                                    className="about-border-h bottom"
+                                    initial={{ scaleX: 0 }}
+                                    whileInView={{ scaleX: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+                                />
+
                                 <div className="about-content">
                                     <p className="about-text">{personalInfo.bio}</p>
 
                                     <div className="about-highlights">
-                                        <Row gutter={[16, 16]} justify="center">
+                                        <Row gutter={[0, 0]} justify="center">
                                             <Col xs={8} md={8}>
                                                 <div className="highlight-item">
                                                     <div className="highlight-number">{personalInfo.yearsOfExperience}</div>

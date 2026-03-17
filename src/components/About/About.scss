@@ -1,5 +1,9 @@
 .about-section {
     background: var(--bg-secondary);
+
+    .container {
+        max-width: 1200px; // Increased from global 1200px
+    }
 }
 
 .section-header {
@@ -25,49 +29,105 @@
     margin: 0 auto;
 }
 
-.about-card {
-    background: transparent;
-    border-radius: var(--radius-xl);
-    box-shadow: none;
+.about-card.ant-card {
+    background: #000000 !important; // Pure black background
+    border-radius: 0 !important;
+    border: none !important; // Remove standard border to use extended ones
+    position: relative;
     transition: all var(--transition-normal);
+    box-shadow: none !important;
+    overflow: visible !important; // Needed for extended borders
+
+    .ant-card-body {
+        background: transparent !important;
+        padding: 0 !important;
+    }
+
+    /* Vertical Borders (Animate Top -> Bottom) */
+    .about-border-v {
+        position: absolute;
+        top: -30px;
+        bottom: -30px;
+        width: 1.5px;
+        border-left: 1.5px dashed rgba(255, 255, 255, 0.15);
+        transform-origin: top;
+        pointer-events: none;
+        transition: border-color 0.3s ease;
+
+        &.left {
+            left: 0;
+        }
+
+        &.right {
+            right: 0;
+        }
+    }
+
+    /* Horizontal Borders (Animate Left -> Right) */
+    .about-border-h {
+        position: absolute;
+        left: -30px;
+        right: -30px;
+        height: 1.5px;
+        border-top: 1.5px dashed rgba(255, 255, 255, 0.15);
+        transform-origin: center;
+        pointer-events: none;
+        transition: border-color 0.3s ease;
+
+        &.top {
+            top: 0;
+        }
+
+        &.bottom {
+            bottom: 0;
+        }
+    }
 
     &:hover {
-        box-shadow: none;
+
+        .about-border-v,
+        .about-border-h {
+            border-color: rgba(255, 255, 255, 0.4);
+        }
     }
+
 }
 
 .about-content {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md); // Increased padding for better internal space
 }
 
 .about-text {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.8;
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
     text-align: justify;
 }
 
 .about-highlights {
-    margin-bottom: var(--spacing-md);
-    padding: var(--spacing-sm) 0;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    margin: 0 calc(-1 * var(--spacing-md)) var(--spacing-lg); // Stretch to card borders
+    border-top: 1.5px dashed rgba(255, 255, 255, 0.2);
+    border-bottom: 1.5px dashed rgba(255, 255, 255, 0.2);
 }
 
 .highlight-item {
     text-align: center;
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-sm);
+    border: none; // Remove inner box borders
+    border-radius: 0;
+}
+
+// Draw the "connecting" dividers
+.ant-row .ant-col:not(:last-child) .highlight-item {
+    border-right: 1.5px dashed rgba(255, 255, 255, 0.2);
 }
 
 .highlight-number {
     font-size: 2.5rem;
     font-weight: 700;
     font-family: var(--font-secondary);
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     margin-bottom: var(--spacing-xs);
 }
 
@@ -97,10 +157,10 @@
 }
 
 .focus-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background: var(--primary-color);
+    background: #ffffff;
     flex-shrink: 0;
 }
 

@@ -6,7 +6,7 @@ export const personalInfo = {
     tagline: 'Specializing in high-performance full-stack development with React, React Native, and Node.js.',
     yearsOfExperience: '3+',
     bio: 'Full Stack Web and Mobile Developer with 3+ years of experience specializing in React.js, React Native, Node.js, and modern frontend architecture. Experienced in building scalable admin dashboards, real-time chat applications using WebSocket (Socket.io), and mobile applications with live location tracking. Strong in developing responsive user interfaces, efficient state management, and REST API development and integration using Node.js and Express.js. Skilled in building high-performance, scalable applications with clean, maintainable code and seamless frontend–backend communication.',
-    linkedin: 'https://www.linkedin.com/in/ragavan-s-262409360/',
+    linkedin: 'https://www.linkedin.com/in/ragavan-s-b88ab63b0/',
 };
 
 export const skills: Skill[] = [
@@ -88,7 +88,7 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
     {
         id: 'chat-app',
-        title: 'Real-time Chat Application (Mobile)',
+        title: 'Real-time Chat Application',
         description:
             'A comprehensive WhatsApp-like mobile chat application built with React Native, featuring real-time messaging, media sharing, and offline-first capabilities.',
         features: [
@@ -128,10 +128,11 @@ export const projects: Project[] = [
             'Integrated AWS S3 for secure media upload/download with pre-signed URLs and progress tracking',
             'Optimized app performance—reduced initial load time by 40% and message delivery latency by 60%',
         ],
+        iconName: 'MessageOutlined',
     },
     {
         id: 'insurance-app',
-        title: 'Insurance Management Application (Web)',
+        title: 'Insurance Management Application',
         description:
             'A comprehensive web-based insurance management platform built with React and Node.js, enabling policy management, claims processing, and customer handling with role-based access control and a highly optimized, modern UI.',
         features: [
@@ -155,10 +156,11 @@ export const projects: Project[] = [
             'Created reusable component library with Material UI themes ensuring consistent and premium design across all pages',
             'Built backend RESTful APIs with Node.js and Express.js for policy, claims, and user management',
         ],
+        iconName: 'SafetyOutlined',
     },
     {
         id: 'employee-management',
-        title: 'Employee Management & Live Tracking System (Web & Mobile)',
+        title: 'Employee Management & Live Tracking System',
         description:
             'A large-scale, enterprise-grade employee management and real-time tracking platform built for both web and mobile. The system covers the full employee lifecycle — from clock-in/out attendance, shift scheduling, and leave management to live GPS tracking, real-time notifications, and comprehensive admin dashboards. Designed and developed end-to-end by me across frontend, backend, and cloud infrastructure.',
         features: [
@@ -210,6 +212,7 @@ export const projects: Project[] = [
             'Built comprehensive analytics dashboards with real-time data visualization, report generation, and Excel/PDF export functionality',
             'Implemented offline-first mobile architecture ensuring seamless data sync when connectivity is restored',
         ],
+        iconName: 'TeamOutlined',
     },
     {
         id: 'trust-organization',
@@ -251,6 +254,7 @@ export const projects: Project[] = [
             'Styled the entire application with Tailwind CSS for a clean, modern, and fully responsive UI',
             'Integrated donation history tracking and receipt generation for donors',
         ],
+        iconName: 'HeartOutlined',
     },
     {
         id: 'car-booking',
@@ -278,11 +282,12 @@ export const projects: Project[] = [
             'Built the backend RESTful APIs with Node.js and Express.js for booking, user, and admin operations',
             'Ensured pixel-perfect responsive design across all devices using modern CSS techniques',
         ],
+        iconName: 'CarOutlined',
     },
     {
         id: 'responsive-websites',
 
-        title: 'Responsive Websites (React & TypeScript)',
+        title: 'Responsive Websites',
         description:
             'Designed and developed 4+ fully responsive, production-quality websites built entirely with React and TypeScript — no backend involved. Each site focuses on clean component architecture, pixel-perfect responsiveness across all screen sizes, and a polished, modern user experience.',
         features: [
@@ -325,13 +330,15 @@ export const projects: Project[] = [
             'Integrated third-party APIs and static data sources to power dynamic content without a dedicated backend',
             'Implemented dark mode and theme customization using React context and CSS custom properties',
         ],
+        iconName: 'DesktopOutlined',
         link: 'https://www.advantedgets.com/',
+        linkLabel: 'Advantedgets',
     },
 ];
 
 export const contactInfo: ContactInfo = {
     email: 'ragavandev07@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/ragavan-s-262409360/',
+    linkedin: 'https://www.linkedin.com/in/ragavan-s-b88ab63b0/',
     github: 'https://github.com/ragavandev07',
     phone: '+919344262891',
 };

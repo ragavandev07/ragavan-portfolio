@@ -1,3 +1,5 @@
+"use client";
+
 import { ThunderboltOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import { skills } from '../../data/portfolioData';

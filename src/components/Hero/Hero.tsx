@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from 'antd';
 import { motion } from 'framer-motion';
 
@@ -73,7 +75,7 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5, duration: 0.6 }}
                         >
-                            {personalInfo.tagline}
+                            Specializing in <span className="highlight-white">high-performance</span> full-stack development with React, React Native, and Node.js.
                         </motion.p>
 
                         {/* CTA buttons — desktop only */}
@@ -105,57 +107,7 @@ const Hero = () => {
 
                     </motion.div>
 
-                    {/* ── RIGHT: Animated Code Block ── */}
-                    <motion.div
-                        className="hero-right"
-                        initial={{ opacity: 0, x: 40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-                    >
-                        {/* Floating orbs behind the card */}
-                        <div className="code-orb code-orb-1" />
-                        <div className="code-orb code-orb-2" />
 
-                        <div className="code-card">
-                            {/* Window chrome */}
-                            <div className="code-header">
-                                <span className="code-dot red" />
-                                <span className="code-dot yellow" />
-                                <span className="code-dot green" />
-                                <span className="code-filename">ragavan.ts</span>
-                            </div>
-
-                            {/* Code lines */}
-                            <div className="code-body">
-                                {codeLines.map((line, i) => (
-                                    <motion.div
-                                        key={i}
-                                        className="code-line"
-                                        initial={{ opacity: 0, x: 10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.6 + i * 0.1, duration: 0.35 }}
-                                        style={{ paddingLeft: `${line.indent * 20}px` }}
-                                    >
-                                        <span className="line-num">{i + 1}</span>
-                                        <span style={{ color: line.color }}>{line.text}</span>
-                                    </motion.div>
-                                ))}
-
-                                {/* Cursor blink */}
-                                <motion.div
-                                    className="code-cursor"
-                                    animate={{ opacity: [1, 0, 1] }}
-                                    transition={{ repeat: Infinity, duration: 1.1 }}
-                                />
-                            </div>
-
-                            {/* Status bar */}
-                            <div className="code-footer">
-                                <span className="status-dot" />
-                                <span>Available for opportunities</span>
-                            </div>
-                        </div>
-                    </motion.div>
 
                 </div>
             </div>

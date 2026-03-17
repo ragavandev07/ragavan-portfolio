@@ -11,13 +11,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0.15;
-        transition: transform 0.5s ease-out;
-        transform: scale(1.1);
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
         z-index: 0;
     }
 
@@ -36,9 +30,8 @@
 }
 
 .contact-info-card {
-    background: var(--bg-secondary);
+    background: #000000;
     border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-md);
     border: 1px solid var(--border-color);
     padding: var(--spacing-xl);
 }

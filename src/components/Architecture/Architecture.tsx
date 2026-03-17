@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, Steps } from 'antd';
 import { ApiOutlined, SyncOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
@@ -29,7 +31,7 @@ const Architecture = () => {
                             viewport={{ once: true }}
                             transition={{ delay: 0.2, duration: 0.5 }}
                         >
-                            <Card className="architecture-card" bordered={false}>
+                            <Card className="architecture-card" variant="borderless">
                                 <h3 className="architecture-title">
                                     <SyncOutlined spin /> Message Lifecycle
                                 </h3>
@@ -55,7 +57,7 @@ const Architecture = () => {
                             viewport={{ once: true }}
                             transition={{ delay: 0.4, duration: 0.5 }}
                         >
-                            <Card className="architecture-card" bordered={false}>
+                            <Card className="architecture-card" variant="borderless">
                                 <h3 className="architecture-title">
                                     <SyncOutlined /> Offline Sync Strategy
                                 </h3>
@@ -80,7 +82,7 @@ const Architecture = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.6, duration: 0.5 }}
                     >
-                        <Card className="architecture-card tech-stack-card" bordered={false}>
+                        <Card className="architecture-card tech-stack-card" variant="borderless">
                             <h3 className="architecture-title">Real-time Architecture Stack</h3>
                             <div className="tech-stack-grid">
                                 <div className="tech-stack-item">

@@ -1,3 +1,5 @@
+"use client";
+
 import { TrophyOutlined, LaptopOutlined, BulbOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import { experiences } from '../../data/portfolioData';
