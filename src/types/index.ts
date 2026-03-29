@@ -19,6 +19,7 @@ export interface Project {
   technologies: string[];
   highlights?: string[];
   rolesAndResponsibilities?: string[];
+  issuesAndSolutions?: { issue: string; solution: string }[];
   iconName?: string;
   link?: string;
   linkLabel?: string;

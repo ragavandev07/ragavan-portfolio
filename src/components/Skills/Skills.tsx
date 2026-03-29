@@ -49,6 +49,16 @@ const Skills = () => {
         'Responsive Design': 'responsive',
     };
 
+    // Icons whose SVGs are black/dark and need inversion on dark bg
+    const darkIcons = new Set([
+        'Express.js',
+        'Socket.io',
+        'WebSockets',
+        'Next.js',
+        'Vercel',
+        'GitHub',
+    ]);
+
     const getIconUrl = (skillName: string) => {
         const slug = iconMap[skillName] || skillName.toLowerCase().replace(/[^a-z0-9]/g, '');
         return `/icons/${slug}.svg`;
@@ -85,7 +95,7 @@ const Skills = () => {
                                     <img
                                         src={getIconUrl(skill)}
                                         alt={skill}
-                                        className="skill-image"
+                                        className={`skill-image${darkIcons.has(skill) ? ' skill-image--invert' : ''}`}
                                         onError={(e) => {
                                             const target = e.target as HTMLImageElement;
                                             target.style.display = 'none';

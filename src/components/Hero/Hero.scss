@@ -174,43 +174,71 @@
     }
 }
 
+/* ── CTA Button — bracket style ── */
 .cta-button {
-    height: 48px !important;
-    width: 180px;
-    font-family: 'JetBrains Mono', monospace; // High-end developer/code aesthetic
-    text-transform: capitalize; // Each word starts with a capital letter
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 4px;
-    position: relative;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    line-height: 1;
-    border: none !important; // Border size 0
+    gap: 10px;
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    position: relative;
+    transition: gap 0.25s ease;
 
     &.primary {
-        background: #ffffff;
-        color: #000000 !important;
-        font-weight: 700;
+        color: #ffffff;
 
-        &:hover,
-        &:focus {
-            background: #e4e4e7 !important;
-            color: #000000 !important;
+        &::before {
+            content: '[';
+            font-size: 1.1rem;
+            color: #ffffff;
+            opacity: 0;
+            transform: translateX(8px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        &::after {
+            content: ']';
+            font-size: 1.1rem;
+            color: #ffffff;
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        &:hover {
+            gap: 14px;
+
+            &::before {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            &::after {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .cta-arrow {
+                transform: translateX(4px);
+            }
+        }
+
+        &:active {
+            opacity: 0.7;
         }
     }
 
-    &.secondary {
-        color: #ffffff !important;
-        background: rgba(255, 255, 255, 0.2); // Subtle background since no border
-
-        &:hover,
-        &:focus {
-            background: rgba(255, 255, 255, 0.4) !important;
-            color: #ffffff !important;
-        }
+    .cta-arrow {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+        transition: transform 0.25s ease;
     }
 }
 

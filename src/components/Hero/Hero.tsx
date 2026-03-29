@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from 'antd';
 import { motion } from 'framer-motion';
 
 import { personalInfo } from '../../data/portfolioData';
@@ -41,7 +40,7 @@ const Hero = () => {
                             className="exp-badge"
                             initial={{ opacity: 0, y: -16 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2, duration: 0.5 }}
+                            transition={{ delay: 1.8, duration: 0.5 }}
                         >
                             <span className="exp-num">{personalInfo.yearsOfExperience}</span>
                             <div className="exp-divider" />
@@ -63,7 +62,7 @@ const Hero = () => {
                             className="hero-role"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.4, duration: 0.6 }}
+                            transition={{ delay: 1.0, duration: 0.6 }}
                         >
                             {personalInfo.role}
                         </motion.h2>
@@ -73,35 +72,24 @@ const Hero = () => {
                             className="hero-tagline"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.5, duration: 0.6 }}
+                            transition={{ delay: 1.8, duration: 0.6 }}
                         >
                             Specializing in <span className="highlight-white">high-performance</span> full-stack development with React, React Native, and Node.js.
                         </motion.p>
 
-                        {/* CTA buttons — desktop only */}
+                        {/* CTA */}
                         <motion.div
                             className="hero-cta"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.65, duration: 0.6 }}
+                            transition={{ delay: 1.8, duration: 0.6 }}
                         >
-                            <Button
-                                type="primary"
-                                size="large"
-                                onClick={scrollToProjects}
-                                className="cta-button primary"
-                            >
-                                View Projects
-                            </Button>
-                            <Button
-                                size="large"
-                                href="https://portfolio-ragavan.s3.eu-north-1.amazonaws.com/RagavanS.Resume.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="cta-button secondary"
-                            >
-                                Resume
-                            </Button>
+                            <button className="cta-button primary" onClick={scrollToProjects}>
+                                <span>View Projects</span>
+                                <svg className="cta-arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </button>
                         </motion.div>
 
 

@@ -59,16 +59,16 @@ export const skills: Skill[] = [
 
 export const experiences: Experience[] = [
     {
-        title: 'Frontend Engineer',
+        title: 'Software Engineer',
         company: 'Lamynaals Technologies Private Limited',
-        duration: 'Jan 2023 - Feb 2026',
+        duration: 'Jan 2023 - Mar 2026',
         description: [
-            'Architected and developed a production-ready real-time chat application serving 1000+ active users on mobile using React Native and Socket.io',
-            'Built an enterprise-grade employee management & live tracking system (Web & Mobile) covering attendance, shift scheduling, leave management, and real-time GPS tracking',
-            'Developed a comprehensive insurance management platform with policy management, claims processing, role-based access control, and premium UI/UX',
-            'Created a fully responsive car booking website with Google Places API integration, real-time distance calculation, and dynamic fare estimation',
-            'Engineered offline-first mobile architecture using Realm DB, ensuring seamless data synchronization and persistence across devices',
-            'Optimized application performance, reducing initial load time by 40% and improving real-time message delivery latency by 60%',
+            'Developed and maintained a real-time communication messaging application for mobile using React Native and Socket.io, supporting group messaging, voice notes, and offline sync',
+            'Built an enterprise-grade employee management and live GPS tracking system across Web (React) and Mobile (React Native), covering attendance, shift scheduling, and leave management',
+            'Developed a comprehensive insurance management platform (React + Node.js) with policy management, claims processing, and role-based access control',
+            'Built a Trust Organization management platform (React) for donation tracking, donor/receiver management, and category-wise reporting via REST API integration',
+            'Created a fully responsive car booking website with Google Places API integration, real-time distance calculation, and a dynamic fare estimation engine',
+            'Developed 4 production-quality responsive websites using React and TypeScript with modern UI/UX, animations, and third-party API integrations',
         ],
         technologies: [],
     },
@@ -90,7 +90,7 @@ export const projects: Project[] = [
         id: 'chat-app',
         title: 'Real-time Chat Application',
         description:
-            'A comprehensive WhatsApp-like mobile chat application built with React Native, featuring real-time messaging, media sharing, and offline-first capabilities.',
+            'A comprehensive real-time communication messaging application built with React Native, featuring instant messaging, media sharing, and offline-first capabilities.',
         features: [
             'Real-time messaging with Socket.io integration',
             'Online/offline presence indicators',
@@ -100,8 +100,6 @@ export const projects: Project[] = [
             'Offline message queue with automatic sync',
             'Push notifications for new messages',
             'Group chat functionality',
-            'Message search and filtering',
-            'End-to-end message encryption',
         ],
         technologies: [
             'React Native',
@@ -127,6 +125,16 @@ export const projects: Project[] = [
             'Implemented voice messaging with custom waveform animations, audio recording, and playback controls in React Native',
             'Integrated AWS S3 for secure media upload/download with pre-signed URLs and progress tracking',
             'Optimized app performance—reduced initial load time by 40% and message delivery latency by 60%',
+        ],
+        issuesAndSolutions: [
+            {
+                issue: 'Severe performance lag and UI freezing during high-frequency message bursts in group chats.',
+                solution: 'Optimized the rendering cycle using advanced FlatList configurations (windowSize, maxToRenderPerBatch) and implemented debouncing for incoming Socket.io events, batching state updates to prevent dropped frames.'
+            },
+            {
+                issue: 'Accurately and efficiently tracking real-time online/offline status for thousands of concurrent users in a distributed system.',
+                solution: 'Utilized Redis as a fast, in-memory data store to manage active WebSocket connection states globally, drastically optimizing presence tracking performance and reducing main database load.'
+            }
         ],
         iconName: 'MessageOutlined',
     },
@@ -156,6 +164,16 @@ export const projects: Project[] = [
             'Created reusable component library with Material UI themes ensuring consistent and premium design across all pages',
             'Built backend RESTful APIs with Node.js and Express.js for policy, claims, and user management',
         ],
+        issuesAndSolutions: [
+            {
+                issue: 'Performance bottleneck and slow UI rendering when searching through massive amounts of insurance data records.',
+                solution: 'Implemented data pagination and MongoDB database indexing on the Node.js backend. On the frontend, added a debounce method for search inputs, vastly improving user experience and drastically reducing unnecessary API calls.'
+            },
+            {
+                issue: 'Handling large volumes of bulk policy uploads via Excel without crashing the Node.js server.',
+                solution: 'Used streams to parse Excel files iteratively in Node.js and offloaded validation to a background queue for better concurrency and stability.'
+            }
+        ],
         iconName: 'SafetyOutlined',
     },
     {
@@ -175,7 +193,6 @@ export const projects: Project[] = [
             'Task assignment and progress tracking',
             'Comprehensive analytics dashboard with reports and exports',
             'Push notifications for schedule changes, approvals, and alerts',
-            'Offline-first mobile support with data sync on reconnection',
         ],
         technologies: [
             'React',
@@ -212,15 +229,24 @@ export const projects: Project[] = [
             'Built comprehensive analytics dashboards with real-time data visualization, report generation, and Excel/PDF export functionality',
             'Implemented offline-first mobile architecture ensuring seamless data sync when connectivity is restored',
         ],
+        issuesAndSolutions: [
+            {
+                issue: 'Mobile battery drain and throttling while performing continuous GPS tracking in background or killed states.',
+                solution: 'Utilized background geolocation native modules, caching coordinates and batching location updates locally before syncing them asynchronously to the server.'
+            },
+            {
+                issue: 'Preventing attendance fraud with fake GPS applications and out-of-bounds check-ins.',
+                solution: 'Implemented strict geo-fencing algorithms intersecting with dynamic worksite perimeters, integrating with tamper-evident location providers.'
+            }
+        ],
         iconName: 'TeamOutlined',
     },
     {
         id: 'trust-organization',
         title: 'Trust Organization Management Platform',
         description:
-            'A full-stack web application for managing a trust organization — enabling online donations, donor profile management, and receiver case tracking. Supports multiple donation categories including child welfare, marriage assistance, and hospital/medical aid.',
+            'A React-based web application for managing a trust organization — enabling donor profile management, receiver case tracking, and category-wise donation management. Integrated with REST APIs for all data operations including donations, donor records, and report generation.',
         features: [
-            'Online donation portal with secure payment flow',
             'Donor registration and profile management',
             'Receiver case creation and status tracking',
             'Multiple donation categories: Child Welfare, Marriage Aid, Medical/Hospital, Education',
@@ -232,12 +258,10 @@ export const projects: Project[] = [
         ],
         technologies: [
             'React',
-            'Node.js',
-            'Express.js',
-            'MongoDB',
+            'JavaScript',
             'Tailwind CSS',
             'CSS3',
-            'JavaScript',
+            'REST API Integration',
         ],
         highlights: [
             'Multi-category donation system',
@@ -246,13 +270,23 @@ export const projects: Project[] = [
             'Tailwind CSS UI',
         ],
         rolesAndResponsibilities: [
-            'Designed and developed the full-stack application from scratch using React and Node.js',
-            'Built the donation portal with category-wise donation flows for child welfare, marriage, hospital, and education',
-            'Implemented donor registration, login, and profile management with role-based access control',
+            'Designed and developed the complete frontend from scratch using React and JavaScript',
+            'Built the donation portal UI with category-wise donation flows for child welfare, marriage, hospital, and education',
+            'Implemented donor registration, login, and profile management screens with role-based UI access control',
             'Created a comprehensive admin dashboard to manage donors, receivers, donation records, and category reports',
-            'Developed RESTful APIs with Node.js and Express.js for all donor, receiver, and donation operations',
+            'Integrated all features with backend REST APIs — handling donor, receiver, and donation data operations',
             'Styled the entire application with Tailwind CSS for a clean, modern, and fully responsive UI',
-            'Integrated donation history tracking and receipt generation for donors',
+            'Implemented donation history views and receipt display by consuming backend-generated data via APIs',
+        ],
+        issuesAndSolutions: [
+            {
+                issue: 'Handling deeply nested API response structures for category-wise donation reports on the frontend.',
+                solution: 'Built a client-side data transformation layer to normalize and flatten API responses before rendering, ensuring consistent UI regardless of backend changes.'
+            },
+            {
+                issue: 'Managing complex role-based UI visibility (Admin / Donor / Staff) without a dedicated frontend auth framework.',
+                solution: 'Implemented a React context-based permission system that conditionally renders components and routes based on the user role received from the API login response.'
+            }
         ],
         iconName: 'HeartOutlined',
     },
@@ -282,6 +316,16 @@ export const projects: Project[] = [
             'Built the backend RESTful APIs with Node.js and Express.js for booking, user, and admin operations',
             'Ensured pixel-perfect responsive design across all devices using modern CSS techniques',
         ],
+        issuesAndSolutions: [
+            {
+                issue: 'Accurately estimating dynamic fares taking multiple pricing bounds and live distance metrics into account.',
+                solution: 'Leveraged the Google Distance Matrix API coupled with a custom configurable backend pricing engine to compute rates synchronously without blocking the UI.'
+            },
+            {
+                issue: 'Handling high frequency updates and filtering in the driver matching dashboard.',
+                solution: 'Built optimized real-time indexes in MongoDB combined with efficient React rendering approaches that effectively curbed UI stuttering.'
+            }
+        ],
         iconName: 'CarOutlined',
     },
     {
@@ -289,7 +333,7 @@ export const projects: Project[] = [
 
         title: 'Responsive Websites',
         description:
-            'Designed and developed 4+ fully responsive, production-quality websites built entirely with React and TypeScript — no backend involved. Each site focuses on clean component architecture, pixel-perfect responsiveness across all screen sizes, and a polished, modern user experience.',
+            'Designed and developed 4 fully responsive, production-quality websites built entirely with React and TypeScript — no backend involved. Each site focuses on clean component architecture, pixel-perfect responsiveness across all screen sizes, and a polished, modern user experience.',
         features: [
             'Fully responsive layouts for mobile, tablet, and desktop',
             'Type-safe codebase with TypeScript throughout',
@@ -329,6 +373,16 @@ export const projects: Project[] = [
             'Ensured cross-browser compatibility and accessibility compliance (WCAG) across all websites',
             'Integrated third-party APIs and static data sources to power dynamic content without a dedicated backend',
             'Implemented dark mode and theme customization using React context and CSS custom properties',
+        ],
+        issuesAndSolutions: [
+            {
+                issue: 'Delivering highly interactive, physics-based micro animations without compromising page load speeds and SEO.',
+                solution: 'Used progressive lazy-loading for heavy Framer Motion features to optimize the critical rendering path, consistently achieving 95+ Lighthouse scores.'
+            },
+            {
+                issue: 'Scaling application logic and themes seamlessly without server support.',
+                solution: 'Engineered a highly extensible generic data-fetching layer resolving typed data locally with Context API providing rapid pseudo-dynamic updates.'
+            }
         ],
         iconName: 'DesktopOutlined',
         link: 'https://www.advantedgets.com/',

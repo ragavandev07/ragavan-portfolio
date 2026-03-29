@@ -137,6 +137,11 @@
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     transition: filter 0.3s ease;
+
+    // For icons that are black SVGs — invert to white on dark bg
+    &--invert {
+        filter: invert(1) brightness(1.8);
+    }
 }
 
 .skill-name {
